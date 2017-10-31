@@ -1,0 +1,145 @@
+@import "reset.css";
+*{
+    user-select: none;
+}
+body{
+    background: #ce1ce6;
+    background: -moz-linear-gradient(top, #ce1ce6 0%, #bc2dda 21%, #be2cdb 21%, #aa3ed1 36%, #ac3dd1 37%, #9451c3 53%, #9450c5 53%, #8e55c1 57%, #8b56bf 57%, #8d56bf 58%, #8a59be 59%, #8857bf 59%, #8a59be 59%, #825eba 64%, #7e60ba 65%, #7665b6 70%, #696db0 76%, #6570b0 77%, #6770af 77%, #6371af 78%, #5f74ab 80%, #5b75ab 81%, #4a7ca5 87%, #467ea5 88%, #467ea4 88%, #3e80a3 90%, #4180a2 90%, #3b81a2 91%, #3a82a2 92%, #3683a2 92%, #33849f 93%, #3584a1 93%, #2f859e 94%, #31859e 94%, #2d869f 94%, #2f859e 94%, #23889d 96%, #1f889d 96%, #23889d 96%, #1f889d 96%, #1d899c 97%, #18899c 97%, #158a9b 98%, #0f8a9b 98%, #0a8b9b 98%, #008b9b 98%, #0a8b9b 98%, #0a8b9b 99%, #008b9b 99%, #008d9a 100%);
+    background: -webkit-linear-gradient(top, #ce1ce6 0%,#bc2dda 21%,#be2cdb 21%,#aa3ed1 36%,#ac3dd1 37%,#9451c3 53%,#9450c5 53%,#8e55c1 57%,#8b56bf 57%,#8d56bf 58%,#8a59be 59%,#8857bf 59%,#8a59be 59%,#825eba 64%,#7e60ba 65%,#7665b6 70%,#696db0 76%,#6570b0 77%,#6770af 77%,#6371af 78%,#5f74ab 80%,#5b75ab 81%,#4a7ca5 87%,#467ea5 88%,#467ea4 88%,#3e80a3 90%,#4180a2 90%,#3b81a2 91%,#3a82a2 92%,#3683a2 92%,#33849f 93%,#3584a1 93%,#2f859e 94%,#31859e 94%,#2d869f 94%,#2f859e 94%,#23889d 96%,#1f889d 96%,#23889d 96%,#1f889d 96%,#1d899c 97%,#18899c 97%,#158a9b 98%,#0f8a9b 98%,#0a8b9b 98%,#008b9b 98%,#0a8b9b 98%,#0a8b9b 99%,#008b9b 99%,#008d9a 100%);
+    background: linear-gradient(to bottom, #ce1ce6 0%,#bc2dda 21%,#be2cdb 21%,#aa3ed1 36%,#ac3dd1 37%,#9451c3 53%,#9450c5 53%,#8e55c1 57%,#8b56bf 57%,#8d56bf 58%,#8a59be 59%,#8857bf 59%,#8a59be 59%,#825eba 64%,#7e60ba 65%,#7665b6 70%,#696db0 76%,#6570b0 77%,#6770af 77%,#6371af 78%,#5f74ab 80%,#5b75ab 81%,#4a7ca5 87%,#467ea5 88%,#467ea4 88%,#3e80a3 90%,#4180a2 90%,#3b81a2 91%,#3a82a2 92%,#3683a2 92%,#33849f 93%,#3584a1 93%,#2f859e 94%,#31859e 94%,#2d869f 94%,#2f859e 94%,#23889d 96%,#1f889d 96%,#23889d 96%,#1f889d 96%,#1d899c 97%,#18899c 97%,#158a9b 98%,#0f8a9b 98%,#0a8b9b 98%,#008b9b 98%,#0a8b9b 98%,#0a8b9b 99%,#008b9b 99%,#008d9a 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ce1ce6', endColorstr='#008d9a',GradientType=0 );
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+nav{
+    display: flex;
+    justify-content: flex-end;
+}
+nav #MenuBtn{
+    opacity: 0;
+}
+.menu {
+    z-index: 999999;
+    cursor: pointer;
+    margin: 120px 160px;
+    background:  #eeeeee;
+    position: absolute;
+    right: 0px;
+}
+.menu  span{
+    position: absolute;
+    display: inline-block;
+    width: 45px;
+    height: 2px;
+    background-color: inherit;
+    cursor: pointer;
+    padding: 0;
+}
+.menu  span::before, 
+.menu  span::after{
+    content: " ";
+    display: inline-block;
+    width: 45px;
+    height: 2px;
+    background-color: inherit;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+}
+.menu  span::after{
+    top: 20px;
+}
+
+.menu span div{
+    height: 30px;
+    width: 45px;
+    margin: 0;
+    padding: 0;
+}
+.menuhide{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    opacity: 0;
+}
+.menuopt {
+    font-size: 100px;
+    text-decoration: none;
+    color: #1c1c1c;
+    margin-top: 30px;
+    font-family: "courier new";
+}
+#MenuBtn:checked ~ .menuhide{
+    z-index: 9999;
+    position: absolute;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: #eeeeee;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    -ms-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+     opacity: 1;
+}
+#MenuBtn:checked ~ label{
+    background: #1c1c1c;
+    }
+
+#MenuBtn:checked ~ label > span::after{
+    display: none;
+}
+#MenuBtn:checked ~ label > span::before{
+    transform: rotate(90deg);
+    top: 1px;
+    transition: transform 0.3s;
+}
+#MenuBtn:checked ~ label > span{
+    transform: rotate(-45deg);
+    transition: transform 0.3s;
+}
+#MenuBtn:checked ~ label > span > div{
+    transform: rotate(45deg);
+    height: 45px;
+    width: 45px;
+    margin: -20px 0 -10px;
+}
+    
+.logo{
+    position: absolute;
+    top: 255px;
+    left: 32.5%;
+    right: 32.5%;
+    margin: 0;
+    width: 35%;
+    max-width: 430px;
+    min-width: 200px;
+}
+.arrow{
+    width: 75px;
+    height: 75px;
+    transform: rotate(45deg);
+    border-top: 2px solid #eeeeee;
+    position: absolute;
+    border-right: 2px solid #eeeeee;
+    top: 300px;
+    left: 85%;
+    cursor: pointer;
+}
+
+.socialmedia{
+    margin: 0;
+    position: absolute;
+    max-width: 300px;
+    width: 30%;
+    top: 70%;
+    display: flex;
+    justify-content: space-around;
+    left: 37%;
+    right: 45%;
+}
