@@ -113,12 +113,9 @@ nav #MenuBtn{
 .logo{
     position: absolute;
     top: 255px;
-    left: 32.5%;
-    right: 32.5%;
+    left: 30.5%;
     margin: 0;
-    width: 35%;
-    max-width: 430px;
-    min-width: 200px;
+    width: 524px;
 }
 .arrow{
     width: 75px;
@@ -142,4 +139,11 @@ nav #MenuBtn{
     justify-content: space-around;
     left: 37%;
     right: 45%;
+}
+.socialmedia > a > img{
+    width: 40px;
+
+
+.socialmedia > a > .gitlogo{
+    width: 50px;
 }
