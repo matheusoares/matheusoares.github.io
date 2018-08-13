@@ -19,6 +19,7 @@ body{
 	background: transparent;
 	cursor: pointer;
 	z-index: 10;
+	outline: none;
 	transition: all .5s;
 }
 
